@@ -1,0 +1,19 @@
+.CarouselEntryForm {
+ padding: 10px; 
+}
+
+.CarouselEntryForm_input {
+  width: 300px;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.CarouselEntryForm_button {
+  background-color: #282c34;
+  color: white;
+  font-weight: normal;
+  margin-left: 20px;
+  height: 30px;
+  width: 100px;
+}

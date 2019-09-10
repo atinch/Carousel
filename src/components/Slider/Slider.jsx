@@ -1,0 +1,36 @@
+import React, { useState, useEffect } from 'react'
+
+import './Slider.css'
+
+export default function Slider({ items }) {
+
+  const [index, setIndex] = useState(1)
+  const [isArrowLeftDisabled, setIsArrowLeftDisabled] = useState(true)
+  const [isArrowRightDisabled, setIsArrowRightDisabled] = useState(false)
+
+  useEffect(() => {
+    console.log(items.length, index);
+    index === 1 ? setIsArrowLeftDisabled(true) : setIsArrowLeftDisabled(false)
+    index === items.length - 3 ? setIsArrowRightDisabled(true) : setIsArrowRightDisabled(false)
+  }, [index])
+
+  let tempList = items
+  tempList = tempList.slice(index - 1, index + 3)
+
+  return (
+    <div className="Slider">
+      <div className='Slider-container'>
+        <div className='Slider-arrow'>
+          <button onClick={() => setIndex(index - 1)} disabled={isArrowLeftDisabled}> {'<'} </button>
+        </div>
+        {
+          tempList.map((item, i) => {
+            return <div key={i} className='Slider-item'>{item}</div>
+          })}
+        <div className='Slider-arrow'>
+          <button onClick={() => setIndex(index + 1)} disabled={isArrowRightDisabled} > {'>'} </button>
+        </div>
+      </div>
+    </div >
+  );
+}

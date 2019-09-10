@@ -12,30 +12,3 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.Carousel-container {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 50px;
-}
-.Carousel-item {
-  border: 1px solid #ddd;
-  height: 100px;
-  width: 100px;
-  vertical-align: middle;
-  line-height: 100px;
-}
-
-.Carousel-arrow {
-  text-align: center;
-  height: 100px;
-  vertical-align: middle;
-  line-height: 100px;
-}
-
-button {
-  background-color: #fff;
-  border: none;
-  font-weight: bold;
-  font-size: 16px;
-}
