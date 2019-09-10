@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+
+  const elements = [1, 2, 3, 4, 5, 6]
+  const [items, setItems] = useState([1, 2, 3, 4])
+  const [index, setIndex] = useState(1)
+  const [isArrowLeftDisabled, setIsArrowLeftDisabled] = useState(true)
+  const [isArrowRightDisabled, setIsArrowRightDisabled] = useState(false)
+
+  useEffect(() => {
+    index === 1 ? setIsArrowLeftDisabled(true) : setIsArrowLeftDisabled(false)
+    setItems(elements.splice(index - 1, 4))
+    index === 3 ? setIsArrowRightDisabled(true) : setIsArrowRightDisabled(false)
+  }, [index])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="Carousel">
+      <Header />
+      <div className='Carousel-container'>
+        <div className='Carousel-arrow'>
+          <button onClick={() => setIndex(index - 1)} disabled={isArrowLeftDisabled}> {'<'} </button>
+        </div>
+        {items.map((item, i) => {
+          return <div key={i} className='Carousel-item'>{item}</div>
+        })}
+        <div className='Carousel-arrow'>
+          <button onClick={() => setIndex(index + 1)} disabled={isArrowRightDisabled} > {'>'} </button>
+        </div>
+      </div>
+    </div >
   );
 }
+
+const Header = () => <div className="Carousel-header">Carousel App</div>
 
 export default App;

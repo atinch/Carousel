@@ -1,16 +1,10 @@
-.App {
+.Carousel {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
+.Carousel-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,15 +13,29 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Carousel-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.Carousel-item {
+  border: 1px solid #ddd;
+  height: 100px;
+  width: 100px;
+  vertical-align: middle;
+  line-height: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Carousel-arrow {
+  text-align: center;
+  height: 100px;
+  vertical-align: middle;
+  line-height: 100px;
+}
+
+button {
+  background-color: #fff;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
 }
