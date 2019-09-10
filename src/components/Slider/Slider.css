@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .Slider-container {
   display: flex;
   justify-content: space-around;
@@ -14,6 +13,9 @@
   width: 100px;
   vertical-align: middle;
   line-height: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .Slider-arrow {
