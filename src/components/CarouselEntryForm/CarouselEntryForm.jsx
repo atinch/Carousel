@@ -14,12 +14,13 @@ export default function CarouselEntryForm({ CarouselItem }) {
   return (
     <form className='CarouselEntryForm' onSubmit={handleOnSubmit}>
       <input
+        type="text"
         className='CarouselEntryForm_input'
         placeholder='Please insert a Carousel Item'
         value={carouselItem}
         onChange={(e) => setCarouselItem(e.target.value)}
       />
-      <button className='CarouselEntryForm_button' onClick={handleOnSubmit} >Submit</button>
+      <button onClick={handleOnSubmit} type='submit' className='CarouselEntryForm_button'  >Submit</button>
     </form>
   )
 }
