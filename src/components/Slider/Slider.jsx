@@ -23,7 +23,7 @@ export default function Slider({ items, onClick, index }) {
       <div className='Slider-items'>
         {
           items.slice(index - 1, index + 3).map((item, i) => {
-            return <div key={i} className='Slider-item'><img src={`https://picsum.photos/id/${item}/200/300`} /></div>
+            return <div key={i} className='Slider-item'><img src={`https://picsum.photos/id/${200 + Number(item)}/200/300`} /></div>
           })}
       </div>
       {items.length > 4 && <div className='Slider-arrow'>
