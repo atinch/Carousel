@@ -2,32 +2,33 @@ import React, { useState, useEffect } from 'react'
 
 import './Slider.css'
 
-export default function Slider({ items }) {
-
-  const [index, setIndex] = useState(1)
+export default function Slider({ items, onClick, index }) {
   const [isArrowLeftDisabled, setIsArrowLeftDisabled] = useState(true)
   const [isArrowRightDisabled, setIsArrowRightDisabled] = useState(true)
 
   useEffect(() => {
-    console.log('fff')
     index === 1 ? setIsArrowLeftDisabled(true) : setIsArrowLeftDisabled(false)
-    index === items.length - 3 || items.length < 5 ? setIsArrowRightDisabled(true) : setIsArrowRightDisabled(false)
+    !(index + 4 <= items.length) || items.length <= 4 ? setIsArrowRightDisabled(true) : setIsArrowRightDisabled(false)
   })
 
+  const handleClick = (value) => {
+    onClick(index + value)
+  }
+
   return (
-    <div className="Slider">
-      <div className='Slider-container'>
-        <div className='Slider-arrow'>
-          <button onClick={() => setIndex(index - 1)} disabled={isArrowLeftDisabled}> {'<'} </button>
-        </div>
+    <div className='Slider-container'>
+      {items.length > 4 && <div className='Slider-arrow'>
+        <button onClick={() => handleClick(-4)} disabled={isArrowLeftDisabled}> {'<'} </button>
+      </div>}
+      <div className='Slider-items'>
         {
           items.slice(index - 1, index + 3).map((item, i) => {
-            return <div key={i} className='Slider-item'>{item}</div>
+            return <div key={i} className='Slider-item'><img src={`https://picsum.photos/id/${item}/200/300`} /></div>
           })}
-        <div className='Slider-arrow'>
-          <button onClick={() => setIndex(index + 1)} disabled={isArrowRightDisabled} > {'>'} </button>
-        </div>
       </div>
-    </div >
+      {items.length > 4 && <div className='Slider-arrow'>
+        <button onClick={() => handleClick(4)} disabled={isArrowRightDisabled} > {'>'} </button>
+      </div>}
+    </div>
   );
 }

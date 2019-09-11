@@ -1,0 +1,19 @@
+.Pagination {
+  margin: 20px auto;
+  display: flex;
+  width: max-content;
+}
+
+.Pagination-item {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-weight: normal;
+  text-align: center; 
+}
+
+.Pagination-item_active {
+  background-color: #282c34;
+  color: white;
+}

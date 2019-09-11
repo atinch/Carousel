@@ -18,3 +18,9 @@
   height: 30px;
   width: 100px;
 }
+
+.CarouselEntryForm-error {
+  color:red;
+  font-size: 11px;
+  height: 20px;
+}
