@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import './Slider.css'
 
-export default function Slider({ items, onClick, index }) {
+export default function Slider({ items, onClick, index, text }) {
   const [isArrowLeftDisabled, setIsArrowLeftDisabled] = useState(true)
   const [isArrowRightDisabled, setIsArrowRightDisabled] = useState(true)
 

@@ -9,17 +9,18 @@ function App() {
   const [items, setItems] = useState([])
   const [index, setIndex] = useState([1])
 
-  const handleCarouselItem = item => {
-    let list = [...items]
+  const handleCarouselItem = (e, item) => {
+    console.log('ffff', item);
+    let list = items
     list.push(item)
     setItems(list)
   }
-
   const handleClick = (index) => {
     setIndex(index)
   }
   const handlePageClick = (pageIndex) => {
     setIndex(pageIndex)
+    console.log('app handlePageClick', pageIndex, index);
   }
   return (
     <div className="Carousel">
